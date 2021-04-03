@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do-List</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <h1>TO do list</h1>
+    <ul>
+        <% for(var i=0; i < items.length; i++) {%>
+            <li class='items <% if(items[i].complete) {%> completeItem<%} %>'>
+                <% if(items[i].complete == true) {%><s> <%} %><span class='todotext'><%= items[i].item %></span> <% if(items[i].complete == true) {%> </s> <%} %> 
+                <button class='deleteBtn'><i class="bi bi-trash"></i></button>
+                <input type="checkbox" class='complete' <% if(items[i].complete == true){%> checked<%} %> >
+            </li>
+            <% } %>
+    </ul>
+    <label for="add"> Add Task
+        <input type="text" name="item" id="item">
+        <button id="add-btn">To Do</button>
+    </label>
+   
+    <!-- <button id="delete">DeleteBtn</button> -->
+
+    <script src="/main.js"></script>
+</body>
+</html>
