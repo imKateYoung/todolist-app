@@ -27,13 +27,7 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
         db = client.db(dbName)
         //console.log(db)
     }).catch(error => console.error(error))
-// MongoClient.connect(dbConnectionStr, {
-//     useUnifiedTopology: true
-// }, (err, client) => {
-//     if (err) return console.error(err)
-//     console.log('Connected to Database')
-//     db = client.db('todolist')
-// })
+
 
 
 
